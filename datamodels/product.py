@@ -7,3 +7,4 @@ class Product:
     price: float
     imaage: str
     category: str
+

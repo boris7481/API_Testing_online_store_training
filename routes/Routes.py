@@ -11,3 +11,18 @@ class Routes:
     CREATE_PRODUCT = "/products"
     UPDATE_PRODUCT = "/products/{id}"
     DELETE_PRODUCT = "/products/{id}"
+
+    
+
+    # cart
+    GET_ALL_CARTS = "/carts"
+    GET_CART_BY_ID = "/carts/{id}"
+    GET_CARTS_WITH_LIMIT = "/carts?limit={limit}"
+    GET_CARTS_SORTED = "/carts?sort={order}"
+    GET_CARTS_BY_DATE_RANGE = "/carts?startDate={startDate}&endDate={endDate}"
+    GET_CARTS_BY_USER = "/carts/user/{userId}"
+    CREATE_CART = "/carts"
+    UPDATE_CART = "/carts/{id}"
+    PARTIAL_UPDATE_CART = "/carts/{id}"
+    DELETE_CART = "/carts/{id}"
+
