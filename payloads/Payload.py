@@ -1,5 +1,8 @@
 from itertools import product
-from datamodels import product, cart, user
+from datamodels.product import Product
+from datamodels.cart import Cart
+from datamodels.user import User
+
 from faker import Faker
 import random
 
@@ -8,15 +11,15 @@ class Payload:
     faker = Faker()
     categories = ["electronis", "furniture", "books", "beauty"]
 
-    def product_payload(self) -> product:
+    def product_payload(self) -> Product:
         title = self.faker.unique.catch_phrase()
         price = float(self.faker.pricetag().replace("$", "").replace(",", ""))
         description = self.faker.sentence()
         image_url = "https://i.pravatar.cc/100"
-        category = random.choice(self.faker.categories)
-        return product(title, price, description, image_url, category)
+        category = random.choice(self.categories)
+        return Product(title, description, price, image_url, category)
 
-    def user_payload(self) -> user:
+    def user_payload(self) -> User:
         email = self.faker.unique.email()
         username = self.faker.user_name()
         password = self.faker.password()
@@ -34,9 +37,9 @@ class Payload:
 
         phone = self.faker.phone_number()
 
-        return user( email, username, password, firstname, lastname,  city, street,  number, zipcode,  lat, long, phone)
+        return User( email, username, password, firstname, lastname,  city, street,  number, zipcode,  lat, long, phone)
 
-    def cart_payload(self) -> cart:
+    def cart_payload(self) -> Cart:
         user_id = random.randint(1, 10)
         date = self.faker.date()
         products = [
@@ -45,4 +48,4 @@ class Payload:
                 "quantity": random.randint(1, 5)
             }
         ]
-        return cart(user_id, date, products)
+        return Cart(user_id, date, products)

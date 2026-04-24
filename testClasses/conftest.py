@@ -8,4 +8,4 @@ def setup():
 #    base_url = Routes.BASE_URL
 #    config_reader = ReadConfig
 
-    yield {"bsae_url":Routes.BASE_URL, "config_reader":ReadConfig}
+    yield {"base_url":Routes.BASE_URL, "config_reader":ReadConfig}
