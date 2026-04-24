@@ -12,7 +12,13 @@ class Routes:
     UPDATE_PRODUCT = "/products/{id}"
     DELETE_PRODUCT = "/products/{id}"
 
-    
+    # user
+    LOGIN = "/auth/login"
+    GET_USER_BY_ID = "/users/{id}"
+    GET_ALL_USERS = "/users"
+    CREATE_USER = "/users"
+    UPDATE_USER = "/users/{id}"
+    PARTIALLY_UPDATE_USER = "/users/{id}"
 
     # cart
     GET_ALL_CARTS = "/carts"
